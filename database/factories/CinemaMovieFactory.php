@@ -17,7 +17,8 @@ class CinemaMovieFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'cinema_id' => $this->faker->numberBetween(1,7),
+            'movie_id' => $this->faker->numberBetween(1,26)
         ];
     }
 }

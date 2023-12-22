@@ -4,7 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Cinema;
+use App\Models\CinemaMovie;
 use App\Models\Movie;
+use Database\Factories\CinemaMovieFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,5 +24,6 @@ class DatabaseSeeder extends Seeder
         // ]);
         Cinema::factory(5)->create();
         Movie::factory(25)->create();
+        CinemaMovie::factory(30)->create();
     }
 }

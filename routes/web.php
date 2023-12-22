@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Cinema;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   $cinemas = \App\Models\Cinema::all();
+   foreach ($cinemas as $cinema)
+   {
+       echo 'Cinemas:'.$cinema['name'].'<br>';
+       foreach ($cinema->movies as $movie)
+       {
+            echo $movie['name'].'<br>';
+       }
+   }
 });
